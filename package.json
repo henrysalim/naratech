@@ -22,5 +22,8 @@
     "@vitejs/plugin-vue-jsx": "^5.1.1",
     "tailwindcss": "^4.1.17",
     "vite-plugin-vue-devtools": "^8.0.3"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0"
   }
 }
