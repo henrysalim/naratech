@@ -1,9 +1,9 @@
 <script setup></script>
 
 <template>
-  <main class="text-left h-screen flex max-w-6xl mx-auto">
+  <main class="text-left h-screen flex max-w-6xl mx-10 lg:mx-auto">
     <header class="relative mt-32">
-      <h1 class="text-5xl md:text-6xl lg: text-7xl font-extrabold mb-4">
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4">
         Nirmana Kreasi Teknologi
       </h1>
       <h3 class="text-2xl md:text-3xl lg:text-4xl">

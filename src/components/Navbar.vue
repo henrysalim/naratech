@@ -39,16 +39,16 @@
                     peer-focus:opacity-100 peer-focus:visible peer-focus:translate-y-0"
             >
               <ul class="py-2 text-sm">
-                <li class="block px-4 py-2 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none">
+                <li class="block px-4 py-2 hover:cursor-pointer hover:bg-gray-50 focus:bg-gray-50 focus:outline-none">
                   Vision &amp; Mission
                 </li>
-                <li class="block px-4 py-2 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none">
+                <li class="block px-4 py-2 hover:cursor-pointer hover:bg-gray-50 focus:bg-gray-50 focus:outline-none">
                   Our Core Values
                 </li>
-                <li class="block px-4 py-2 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none">
+                <li class="block px-4 py-2 hover:cursor-pointer hover:bg-gray-50 focus:bg-gray-50 focus:outline-none">
                   Our Services
                 </li>
-                <li  class="block px-4 py-2 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none">
+                <li  class="block px-4 py-2 hover:cursor-pointer hover:bg-gray-50 focus:bg-gray-50 focus:outline-none">
                   What Makes Us Different?
                 </li>
               </ul>
