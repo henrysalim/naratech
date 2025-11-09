@@ -11,3 +11,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+p {
+  text-align: justify;
+}
+
+ul > li {
+  text-align: justify;
+}
