@@ -4,7 +4,7 @@ import SectionHeading from './SectionHeading.vue';
 </script>
 
 <template>
-  <main class="max-w-6xl mx-10 lg:mx-auto h-screen py-10">
+  <main class="max-w-6xl mx-10 lg:mx-auto min-h-screen py-10">
     <section id="about-us">
       <SectionHeading title="About Us" />
       <p class="text-md">
