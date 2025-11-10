@@ -1,3 +1,12 @@
-<script setup></script>
+<script setup>
+import SectionHeading from './SectionHeading.vue';
 
-<template></template>
+</script>
+
+<template>
+  <main class="max-w-6xl mx-10 lg:mx-auto h-screen py-10">
+    <section id="about-us">
+      <SectionHeading title="Contact Us" />
+    </section>
+  </main>
+</template>

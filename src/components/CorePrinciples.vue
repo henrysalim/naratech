@@ -31,7 +31,7 @@ let corePrinciples = [
 </script>
 
 <template>
-  <main class="max-w-6xl mx-10 lg:mx-auto h-screen py-10">
+  <main class="max-w-6xl mx-10 lg:mx-auto min-h-screen py-10">
     <section id="core-principles">
       <SectionHeading title="Our Core Values" />
 

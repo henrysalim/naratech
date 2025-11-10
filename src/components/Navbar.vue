@@ -14,7 +14,7 @@
     <div class="flex flex-row justify-between items-center p-6 max-w-6xl mx-auto">
       <!-- naratech icon -->
        <a href="/" class="shrink-0 inline-flex items-center space-x-2">
-         <img src="/src/assets/logo.svg" class="w-10 h-10" alt="Naratech" />
+         <img src="/assets/NaratechLogo.png" class="w-12 h-12" alt="Naratech" />
         </a>
        <ul class="list-none hidden lg:flex flex flex-row gap-10">
           <li :class="[currentSection == 'home' ? 'font-bold' : '']">Home</li>
