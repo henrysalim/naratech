@@ -1,6 +1,16 @@
 <script setup>
 import AboutUsImage from '@/assets/AboutUs.png';
 
+import { Award, Lightbulb, Users, Scale, Leaf } from 'lucide-vue-next';
+
+const values = [
+  { id: 1, icon: Award, text: 'Excellence', color: 'bg-blue-50' },
+  { id: 2, icon: Lightbulb, text: 'Innovation', color: 'bg-teal-50' },
+  { id: 3, icon: Users, text: 'Collaboration', color: 'bg-cyan-50' },
+  { id: 4, icon: Scale, text: 'integrity,', color: 'bg-emerald-50' },
+  { id: 5, icon: Leaf, text: 'sustainability', color: 'bg-teal-50' }
+];
+
 </script>
 
 <template>
