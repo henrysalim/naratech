@@ -6,6 +6,7 @@ const prefix = "Beyond Technology, Towards ";
 const words = ["Success", "Innovation", "Excellence", "Impact"];
 
 const textRef = ref(null);
+const cursorRef = ref(null);
 
 onMounted(() => {
   let tl = gsap.timeline({ repeat: -1 });
@@ -19,7 +20,7 @@ onMounted(() => {
       onUpdate() {
         const length = Math.round(this.targets()[0].len);
         textRef.value.textContent = prefix.substring(0, length);
-        cursorRef.value.style.transform = `translateX(${length * 0.62}em)`;
+        cursorRef.value.style.transform = `translateX(${length * 0.001}em)`;
       },
     }
   );
@@ -37,7 +38,7 @@ onMounted(() => {
           const length = Math.round(this.targets()[0].len);
           textRef.value.textContent = prefix + w.substring(0, length);
           cursorRef.value.style.transform = `translateX(${
-            (prefix.length + length) * 0.62
+            (prefix.length + length) * 0.001
           }em)`;
         },
       }
@@ -55,7 +56,7 @@ onMounted(() => {
           const length = Math.round(this.targets()[0].len);
           textRef.value.textContent = prefix + w.substring(0, length);
           cursorRef.value.style.transform = `translateX(${
-            (prefix.length + length) * 0.62
+            (prefix.length + length) * 0.001
           }em)`;
         },
       }
@@ -72,7 +73,7 @@ onMounted(() => {
       onUpdate() {
         const length = Math.round(this.targets()[0].len);
         textRef.value.textContent = prefix.substring(0, length);
-        cursorRef.value.style.transform = `translateX(${length * 0.62}em)`;
+        cursorRef.value.style.transform = `translateX(${length * 0.001}em)`;
       },
     }
   );
@@ -119,35 +120,54 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="text-left min-h-screen flex flex-col max-w-6xl mx-10 lg:mx-auto">
-    <header class="relative mt-32">
-      <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4">
-        Nirmana Kreasi Teknologi
-      </h1>
-      <h3 class="text-2xl md:text-3xl lg:text-4xl">
-        <span ref="textRef"></span>
-        <span ref="cursorRef" class="cursor">_</span>
-      </h3>
-    </header>
+  <main
+    style="
+      background: url('/assets/jumbotron.webp') no-repeat;
+      background-size: cover;
+    "
+    class="relative"
+  >
+    <section
+      id="home"
+      class="text-left min-h-screen flex flex-col max-w-6xl mx-10 lg:mx-auto relative z-[9999]"
+    >
+      <header class="relative mt-32">
+        <h1
+          class="text-5xl md:text-6xl lg:text-7xl text-white font-extrabold mb-4"
+        >
+          Nirmana Kreasi Teknologi
+        </h1>
+        <h3 class="text-2xl md:text-3xl lg:text-4xl text-white">
+          <span ref="textRef"></span>
+          <span ref="cursorRef" class="cursor">_</span>
+        </h3>
+      </header>
 
-    <div class="grid grid-cols-2 lg:grid-cols-4 mt-32 gap-10">
       <div
-        class="p-6 rounded-xl shadow-xl"
-        v-for="(serviceData, idx) in coreServices"
-        v-show="idx != 4"
+        class="grid grid-cols-2 lg:grid-cols-4 absolute -bottom-20 lg:bottom-32 gap-10"
       >
-        <div class="flex flex-col items-center justify-center mb-6">
-          <span :id="['icon', idx]" class="mb-4 block"></span>
-          <h3
-            class="text-xl font-bold text-center h-14"
-            :class="[idx == 0 ? 'w-3/4' : 'w-full']"
-          >
-            {{ serviceData.title }}
-          </h3>
+        <div
+          class="p-6 rounded-xl shadow-xl bg-gray-100"
+          v-for="(serviceData, idx) in coreServices"
+          v-show="idx != 4"
+        >
+          <div class="flex flex-col items-center justify-center mb-6">
+            <span :id="['icon', idx]" class="mb-4 block"></span>
+            <h3
+              class="text-xl font-bold text-center h-14"
+              :class="[idx == 0 ? 'w-3/4' : 'w-full']"
+            >
+              {{ serviceData.title }}
+            </h3>
+          </div>
+          <p>{{ serviceData.description }}</p>
         </div>
-        <p>{{ serviceData.description }}</p>
       </div>
-    </div>
+    </section>
+    <div
+      id="jumbotronBackground"
+      class="bg-gray-900/25 absolute w-full h-full bottom-0"
+    ></div>
   </main>
 </template>
 
