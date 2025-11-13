@@ -9,6 +9,7 @@ import Navbar from "./components/ui/Navbar.vue";
 import OurProjects from "./components/ui/OurProjects.vue";
 import WhatMakesUsDifferent from "./components/ui/WhatMakesUsDifferent.vue";
 
+// Refs for each section
 const homeRef = ref(null);
 const aboutUsRef = ref(null);
 const corePrinciplesRef = ref(null);
@@ -18,12 +19,24 @@ const contactUsRef = ref(null);
 </script>
 
 <template>
-  <Navbar />
-  <Jumbotron ref="homeRef" />
-  <AboutUs ref="aboutUsRef" />
-  <CorePrinciples ref="corePrinciplesRef" />
-  <WhatMakesUsDifferent ref="whatMakesUsDifferentRef" />
-  <OurProjects ref="ourProjectsRef" />
-  <ContactUs ref="contactUsRef" />
+  <!-- Pass all refs as props to the Navbar -->
+  <Navbar
+    :homeRef="homeRef"
+    :aboutUsRef="aboutUsRef"
+    :corePrinciplesRef="corePrinciplesRef"
+    :whatMakesUsDifferentRef="whatMakesUsDifferentRef"
+    :ourProjectsRef="ourProjectsRef"
+    :contactUsRef="contactUsRef"
+  />
+
+  <main>
+    <Jumbotron ref="homeRef" />
+    <AboutUs ref="aboutUsRef" />
+    <CorePrinciples ref="corePrinciplesRef" />
+    <WhatMakesUsDifferent ref="whatMakesUsDifferentRef" />
+    <OurProjects ref="ourProjectsRef" />
+    <ContactUs ref="contactUsRef" />
+  </main>
+
   <Footer />
 </template>
