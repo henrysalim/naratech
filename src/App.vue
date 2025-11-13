@@ -1,17 +1,29 @@
 <script setup>
-import AboutUs from "./components/AboutUs.vue";
-import ContactUs from "./components/ContactUs.vue";
-import CorePrinciples from "./components/CorePrinciples.vue";
-import Jumbotron from "./components/Jumbotron.vue";
-import Navbar from "./components/Navbar.vue";
-import WhatMakesUsDifferent from "./components/WhatMakesUsDifferent.vue";
+import { ref } from "vue";
+import AboutUs from "./components/ui/AboutUs.vue";
+import ContactUs from "./components/ui/ContactUs.vue";
+import CorePrinciples from "./components/ui/CorePrinciples.vue";
+import Footer from "./components/ui/Footer.vue";
+import Jumbotron from "./components/ui/Jumbotron.vue";
+import Navbar from "./components/ui/Navbar.vue";
+import OurProjects from "./components/ui/OurProjects.vue";
+import WhatMakesUsDifferent from "./components/ui/WhatMakesUsDifferent.vue";
+
+const homeRef = ref(null);
+const aboutUsRef = ref(null);
+const corePrinciplesRef = ref(null);
+const whatMakesUsDifferentRef = ref(null);
+const ourProjectsRef = ref(null);
+const contactUsRef = ref(null);
 </script>
 
 <template>
   <Navbar />
-  <Jumbotron />
-  <AboutUs />
-  <CorePrinciples />
-  <WhatMakesUsDifferent />
-  <ContactUs />
+  <Jumbotron ref="homeRef" />
+  <AboutUs ref="aboutUsRef" />
+  <CorePrinciples ref="corePrinciplesRef" />
+  <WhatMakesUsDifferent ref="whatMakesUsDifferentRef" />
+  <OurProjects ref="ourProjectsRef" />
+  <ContactUs ref="contactUsRef" />
+  <Footer />
 </template>
