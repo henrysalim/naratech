@@ -2,6 +2,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap");
 @import "tailwindcss";
 
+@theme {
+  --color-primary-green: "#7FACB3";
+  --color-darker-green: "#4C7980";
+  --color-primary-blue: "#233275";
+}
+
+@layer components {
+  .cta-btn {
+    @apply bg-linear-to-r from-[#4C7980] to-[#7FACB3] px-4 py-3.5 rounded-2xl text-white;
+  }
+}
+
 body {
   min-height: 100vh;
   line-height: 1.6;

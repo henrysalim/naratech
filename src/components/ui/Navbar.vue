@@ -1,106 +1,134 @@
 <script setup>
-defineProps([
-  "homeRef",
-  "aboutUsRef",
-  "corePrinciplesRef",
-  "whatMakesUsDifferentRef",
-  "ourProjectsRef",
-  "contactUsRef",
-]);
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
+// Register GSAP plugin
+onMounted(() => {
+  gsap.registerPlugin(ScrollToPlugin);
+});
+
+// Define props to accept refs from App.vue
+const props = defineProps({
+  homeRef: Object,
+  aboutUsRef: Object,
+  corePrinciplesRef: Object,
+  whatMakesUsDifferentRef: Object,
+  ourProjectsRef: Object,
+  contactUsRef: Object,
+});
+
+// State for mobile menu
 let isNavbarOpened = ref(false);
-let isAboutOpen = ref(false);
-let currentSection = ref("home");
+let currentSection = ref("home"); // You'll need to update this logic, e.g., with IntersectionObserver
 
 const closeMobile = () => (isNavbarOpened.value = false);
 
-function scrollTo(view) {
-  view.value.scrollIntoView({ behaviour: "smooth" });
-}
+// GSAP Smooth Scroll Function
+const scrollTo = (targetRef) => {
+  if (!targetRef || !(targetRef.value?.$el || targetRef.value)) {
+    console.warn("Scroll target ref is not available:", targetRef);
+    return;
+  }
+
+  // When a ref is on a component, the element is accessed via .$el
+  // If it's on a plain element, it's just .value
+  const el = targetRef.value.$el || targetRef.value;
+
+  if (el) {
+    // Calculate offset: 50px top margin + nav height + 20px buffer
+    // Adjust '140' (desktop) and '90' (mobile) as needed.
+    const desktopOffset = 140;
+    const mobileOffset = 90;
+
+    const targetY =
+      el.offsetTop - (window.innerWidth >= 1024 ? desktopOffset : mobileOffset);
+
+    gsap.to(window, {
+      duration: 1.0,
+      scrollTo: {
+        y: targetY,
+        autoKill: false,
+      },
+      ease: "power2.out",
+    });
+  } else {
+    console.error("Could not find element to scroll to.");
+  }
+};
 </script>
 
 <template>
-  <nav class="w-full bg-transparent border-b border-gray-100">
-    <div
-      class="flex flex-row justify-between items-center p-6 max-w-6xl mx-auto"
-    >
+  <nav
+    class="fixed z-[99999] top-5 left-4 right-4 rounded-full border border-gray-100 bg-white/80 backdrop-blur-md shadow-lg lg:top-[50px] lg:w-full lg:max-w-6xl lg:left-1/2 lg:-translate-x-1/2"
+  >
+    <div class="flex flex-row justify-between items-center w-full px-8 py-3">
       <!-- naratech icon -->
-      <a href="/" class="shrink-0 inline-flex items-center space-x-2">
+      <a
+        href="/"
+        @click.prevent="scrollTo(props.homeRef)"
+        class="shrink-0 inline-flex items-center space-x-2"
+      >
         <img
           src="/assets/NaratechLogoWithText.png"
-          class="w-12 h-12"
+          class="h-10 w-auto"
           alt="Naratech"
         />
       </a>
-      <ul class="list-none hidden lg:flex flex flex-row gap-10">
+
+      <!-- menu lists -->
+      <ul
+        class="list-none hidden lg:flex flex-row gap-10 text-gray-700 font-medium"
+      >
         <li
-          :class="[currentSection == 'home' ? 'font-bold' : '']"
-          @click="scrollTo(homeRef)"
+          :class="[currentSection == 'home' ? 'font-bold text-black' : '']"
+          @click="scrollTo(props.homeRef)"
+          class="hover:cursor-pointer hover:text-black transition-colors"
         >
           Home
         </li>
-        <li class="relative hidden lg:block" @click="scrollTo(aboutUsRef)">
-          <button
-            class="peer inline-flex hover:cursor-pointer items-center gap-2 text-gray-700 focus:text-gray-900"
-            aria-haspopup="true"
-          >
-            About Us
-            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-              <path
-                fill-rule="evenodd"
-                d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </button>
-
-          <div
-            class="absolute z-[9999] left-0 top-full w-64 rounded-2xl border border-gray-100 bg-white shadow-xl opacity-0 invisible translate-y-1 transition peer-focus:opacity-100 peer-focus:visible peer-focus:translate-y-0"
-          >
-            <ul class="py-2 text-sm">
-              <li
-                @click="scrollTo(aboutUsRef)"
-                class="block px-4 py-2 hover:cursor-pointer hover:bg-gray-50 focus:bg-gray-50 focus:outline-none"
-              >
-                About Us
-              </li>
-              <li
-                @click="scrollTo(corePrinciplesRef)"
-                class="block px-4 py-2 hover:cursor-pointer hover:bg-gray-50 focus:bg-gray-50 focus:outline-none"
-              >
-                Our Core Values
-              </li>
-              <li
-                @click="scrollTo(whatMakesUsDifferentRef)"
-                class="block px-4 py-2 hover:cursor-pointer hover:bg-gray-50 focus:bg-gray-50 focus:outline-none"
-              >
-                What Makes Us Different?
-              </li>
-              <li
-                @click="scrollTo(ourProjectsRef)"
-                class="block px-4 py-2 hover:cursor-pointer hover:bg-gray-50 focus:bg-gray-50 focus:outline-none"
-              >
-                Our Projects
-              </li>
-            </ul>
-          </div>
+        <li
+          @click="scrollTo(props.aboutUsRef)"
+          class="hover:cursor-pointer hover:text-black transition-colors"
+        >
+          About Us
         </li>
-
-        <li @click="scrollTo(contactUsRef)">Contact Us</li>
+        <li
+          @click="scrollTo(props.whatMakesUsDifferentRef)"
+          class="hover:cursor-pointer hover:text-black transition-colors"
+        >
+          Our Services
+        </li>
+        <li
+          @click="scrollTo(props.ourProjectsRef)"
+          class="hover:cursor-pointer hover:text-black transition-colors"
+        >
+          Our Works
+        </li>
       </ul>
+
+      <a
+        href="#"
+        @click.prevent="scrollTo(props.contactUsRef)"
+        class="hidden lg:block px-6 py-3 rounded-full font-semibold transition-all ease-in-out duration-300 cta-btn hover:shadow-md hover:cursor-pointer"
+      >
+        Let's Collaborate
+      </a>
+
+      <!-- Mobile Menu Button -->
       <button
         class="inline-flex lg:hidden items-center justify-center rounded-xl p-2 ring-1 ring-gray-200"
         @click="isNavbarOpened = !isNavbarOpened"
         :aria-expanded="isNavbarOpened"
-        :aria-controls="mobile - nav"
+        aria-controls="mobile-nav"
       >
         <img src="/src/components/icons/hamburger.svg" />
       </button>
     </div>
+
     <div
       id="mobile-nav"
-      class="lg:hidden z-[9999] overflow-hidden transition-[max-height] duration-300"
+      class="lg:hidden z-9999 overflow-hidden transition-[max-height] duration-300"
       :style="{ maxHeight: isNavbarOpened ? '600px' : '0px' }"
     >
       <div class="mx-auto max-w-6xl px-6 pb-6">
@@ -108,69 +136,49 @@ function scrollTo(view) {
           class="flex flex-col gap-1 rounded-2xl border border-gray-100 bg-white p-2 shadow-sm"
         >
           <li
-            @click="closeMobile, scrollTo(homeRef)"
+            @click="
+              closeMobile();
+              scrollTo(props.homeRef);
+            "
             class="block rounded-xl px-3 py-2 hover:bg-gray-50"
           >
             Home
           </li>
-
-          <li>
-            <button
-              class="w-full flex items-center justify-between rounded-xl px-3 py-2 hover:bg-gray-50"
-              @click="isAboutOpen = !isAboutOpen"
-              :aria-expanded="isAboutOpen"
-            >
-              <span>About Us</span>
-              <svg
-                class="h-4 w-4 transition"
-                :class="isAboutOpen ? 'rotate-180' : ''"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </button>
-            <div
-              class="grid transition-[grid-template-rows] duration-300"
-              :style="{ gridTemplateRows: isAboutOpen ? '1fr' : '0fr' }"
-            >
-              <ul class="overflow-hidden pl-3">
-                <li
-                  @click="closeMobile"
-                  class="block rounded-lg px-3 py-2 hover:bg-gray-50"
-                >
-                  About Us
-                </li>
-                <li
-                  @click="closeMobile"
-                  class="block rounded-lg px-3 py-2 hover:bg-gray-50"
-                >
-                  Our Core Values
-                </li>
-                <li
-                  @click="closeMobile"
-                  class="block rounded-lg px-3 py-2 hover:bg-gray-50"
-                >
-                  What Makes Us Different?
-                </li>
-                <li
-                  @click="closeMobile"
-                  class="block rounded-lg px-3 py-2 hover:bg-gray-50"
-                >
-                  Our Projects
-                </li>
-              </ul>
-            </div>
-          </li>
           <li
-            @click="closeMobile"
+            @click="
+              closeMobile();
+              scrollTo(props.aboutUsRef);
+            "
             class="block rounded-xl px-3 py-2 hover:bg-gray-50"
           >
-            Contact Us
+            About Us
+          </li>
+          <li
+            @click="
+              closeMobile();
+              scrollTo(props.whatMakesUsDifferentRef);
+            "
+            class="block rounded-xl px-3 py-2 hover:bg-gray-50"
+          >
+            Our Services
+          </li>
+          <li
+            @click="
+              closeMobile();
+              scrollTo(props.ourProjectsRef);
+            "
+            class="block rounded-xl px-3 py-2 hover:bg-gray-50"
+          >
+            Our Works
+          </li>
+          <li
+            @click="
+              closeMobile();
+              scrollTo(props.contactUsRef);
+            "
+            class="block rounded-xl px-3 py-2 hover:bg-gray-50 text-teal-700 font-medium"
+          >
+            Let's Collaborate
           </li>
         </ul>
       </div>
