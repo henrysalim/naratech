@@ -12,7 +12,7 @@ const services = [
 </script>
 
 <template>
-    <section class="relative w-full py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    <section id="services" class="relative w-full py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
         <!-- Background dot pattern -->
         <div 
         class="absolute inset-0 w-full h-full opacity-20 pointer-events-none"

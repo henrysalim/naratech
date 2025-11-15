@@ -14,9 +14,7 @@ import FaQ from "./components/ui/FaQ.vue";
 const homeRef = ref(null);
 const aboutUsRef = ref(null);
 const ourProjectsRef = ref(null);
-const valueRef = ref(null);
-const visionRef = ref(null);
-const serviceRef = ref(null);
+const ourServicesRef = ref(null);
 const faqRef = ref(null);
 </script>
 
@@ -25,17 +23,15 @@ const faqRef = ref(null);
   <Navbar
     :homeRef="homeRef"
     :aboutUsRef="aboutUsRef"
-    :corePrinciplesRef="corePrinciplesRef"
-    :whatMakesUsDifferentRef="whatMakesUsDifferentRef"
+    :ourServicesRef="ourServicesRef"
     :ourProjectsRef="ourProjectsRef"
+    :faqRef="faqRef"
   />
 
   <main>
     <Jumbotron ref="homeRef" />
     <AboutUs ref="aboutUsRef" />
-    <Value ref="valueRef" />
-    <Vision ref="visionRef" />
-    <OurServices ref="serviceRef" />
+    <OurServices ref="ourServicesRef" />
     <OurProjects ref="ourProjectsRef" />
     <FaQ ref="faqRef" />
   </main>
