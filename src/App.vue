@@ -9,6 +9,7 @@ import OurProjects from "./components/ui/OurProjects.vue";
 import Value from "./components/ui/Value.vue";
 import Vision from "./components/ui/Vision.vue";
 import OurServices from "./components/ui/OurServices.vue";
+import FaQ from "./components/ui/FaQ.vue";
 
 // Refs for each section
 const homeRef = ref(null);
@@ -17,6 +18,7 @@ const ourProjectsRef = ref(null);
 const valueRef = ref(null);
 const visionRef = ref(null);
 const serviceRef = ref(null);
+const faqRef = ref(null);
 </script>
 
 <template>
@@ -38,6 +40,7 @@ const serviceRef = ref(null);
     <OurServices ref="serviceRef" />
     <OurProjects ref="ourProjectsRef" />
     <ContactUs ref="contactUsRef" />
+    <FaQ ref="faqRef" />
   </main>
 
   <Footer />
