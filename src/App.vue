@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from "vue";
 import AboutUs from "./components/ui/AboutUs.vue";
-import ContactUs from "./components/ui/ContactUs.vue";
 import Footer from "./components/ui/Footer.vue";
 import Jumbotron from "./components/ui/Jumbotron.vue";
 import Navbar from "./components/ui/Navbar.vue";
@@ -29,7 +28,6 @@ const faqRef = ref(null);
     :corePrinciplesRef="corePrinciplesRef"
     :whatMakesUsDifferentRef="whatMakesUsDifferentRef"
     :ourProjectsRef="ourProjectsRef"
-    :contactUsRef="contactUsRef"
   />
 
   <main>
@@ -39,7 +37,6 @@ const faqRef = ref(null);
     <Vision ref="visionRef" />
     <OurServices ref="serviceRef" />
     <OurProjects ref="ourProjectsRef" />
-    <ContactUs ref="contactUsRef" />
     <FaQ ref="faqRef" />
   </main>
 
