@@ -52,7 +52,7 @@ onMounted(async () => {
 
                 <!-- Image -->
                 <img
-                :src="project.image || project.thumbnail || project.cover"
+                :src="project.image_url"
                 alt="project preview"
                 class="w-full rounded-xl mb-6 object-cover"
                 />
