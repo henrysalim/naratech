@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from "vue";
 import AboutUs from "./components/ui/AboutUs.vue";
-import ContactUs from "./components/ui/ContactUs.vue";
 import Footer from "./components/ui/Footer.vue";
 import Jumbotron from "./components/ui/Jumbotron.vue";
 import Navbar from "./components/ui/Navbar.vue";
@@ -9,6 +8,7 @@ import OurProjects from "./components/ui/OurProjects.vue";
 import Value from "./components/ui/Value.vue";
 import Vision from "./components/ui/Vision.vue";
 import OurServices from "./components/ui/OurServices.vue";
+import FaQ from "./components/ui/FaQ.vue";
 
 // Refs for each section
 const homeRef = ref(null);
@@ -17,6 +17,7 @@ const ourProjectsRef = ref(null);
 const valueRef = ref(null);
 const visionRef = ref(null);
 const serviceRef = ref(null);
+const faqRef = ref(null);
 </script>
 
 <template>
@@ -27,7 +28,6 @@ const serviceRef = ref(null);
     :corePrinciplesRef="corePrinciplesRef"
     :whatMakesUsDifferentRef="whatMakesUsDifferentRef"
     :ourProjectsRef="ourProjectsRef"
-    :contactUsRef="contactUsRef"
   />
 
   <main>
@@ -37,7 +37,7 @@ const serviceRef = ref(null);
     <Vision ref="visionRef" />
     <OurServices ref="serviceRef" />
     <OurProjects ref="ourProjectsRef" />
-    <ContactUs ref="contactUsRef" />
+    <FaQ ref="faqRef" />
   </main>
 
   <Footer />
