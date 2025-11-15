@@ -12,10 +12,9 @@ onMounted(() => {
 const props = defineProps({
   homeRef: Object,
   aboutUsRef: Object,
-  corePrinciplesRef: Object,
-  whatMakesUsDifferentRef: Object,
+  ourServicesRef: Object,
   ourProjectsRef: Object,
-  contactUsRef: Object,
+  faqRef: Object,
 });
 
 // State for mobile menu
@@ -25,25 +24,55 @@ let currentSection = ref("home"); // You'll need to update this logic, e.g., wit
 const closeMobile = () => (isNavbarOpened.value = false);
 
 // GSAP Smooth Scroll Function
-const scrollTo = (targetRef) => {
-  if (!targetRef || !(targetRef.value?.$el || targetRef.value)) {
-    console.warn("Scroll target ref is not available:", targetRef);
+const getElementFromRef = (targetRef) => {
+  if (!targetRef) return null;
+
+  // If caller passed a string selector or id
+  if (typeof targetRef === "string") {
+    return document.getElementById(targetRef) || document.querySelector(targetRef);
+  }
+
+  // If a ref object was passed (the common case from App.vue)
+  const candidate = targetRef.value ?? targetRef;
+
+  // Component public instance (SFC) - try .$el
+  if (candidate && candidate.$el) return candidate.$el;
+
+  // DOM element
+  if (candidate instanceof Element) return candidate;
+
+  return null;
+};
+
+// Map of known refs to fallback ids (used if a component hasn't exposed its root)
+const fallbackIdMap = new Map([
+  ["homeRef", "home"],
+  ["aboutUsRef", "about-us"],
+  ["ourServicesRef", "services"],
+  ["ourProjectsRef", "projects"],
+  ["faqRef", "faq"],
+]);
+
+const scrollTo = (targetRef, propName = null) => {
+  let el = getElementFromRef(targetRef);
+
+  // If not found, try fallback by prop name -> id
+  if (!el && propName && fallbackIdMap.has(propName)) {
+    const id = fallbackIdMap.get(propName);
+    el = document.getElementById(id);
+  }
+
+  if (!el) {
+    console.warn("Scroll target element not found for:", targetRef, propName);
     return;
   }
 
-  // When a ref is on a component, the element is accessed via .$el
-  // If it's on a plain element, it's just .value
-  const el = targetRef.value.$el || targetRef.value;
+  const desktopOffset = 140;
+  const mobileOffset = 90;
 
-  if (el) {
-    // Calculate offset: 50px top margin + nav height + 20px buffer
-    // Adjust '140' (desktop) and '90' (mobile) as needed.
-    const desktopOffset = 140;
-    const mobileOffset = 90;
+  const targetY = el.getBoundingClientRect().top + window.scrollY - (window.innerWidth >= 1024 ? desktopOffset : mobileOffset);
 
-    const targetY =
-      el.offsetTop - (window.innerWidth >= 1024 ? desktopOffset : mobileOffset);
-
+  try {
     gsap.to(window, {
       duration: 1.0,
       scrollTo: {
@@ -52,8 +81,9 @@ const scrollTo = (targetRef) => {
       },
       ease: "power2.out",
     });
-  } else {
-    console.error("Could not find element to scroll to.");
+  } catch (err) {
+    // If ScrollToPlugin isn't available, fallback to native smooth scroll
+    window.scrollTo({ top: targetY, behavior: "smooth" });
   }
 };
 </script>
@@ -66,7 +96,7 @@ const scrollTo = (targetRef) => {
       <!-- naratech icon -->
       <a
         href="/"
-        @click.prevent="scrollTo(props.homeRef)"
+        @click.prevent="scrollTo(props.homeRef, 'homeRef')"
         class="shrink-0 inline-flex items-center space-x-2"
       >
         <img
@@ -82,34 +112,34 @@ const scrollTo = (targetRef) => {
       >
         <li
           :class="[currentSection == 'home' ? 'font-bold text-black' : '']"
-          @click="scrollTo(props.homeRef)"
+          @click="scrollTo(props.homeRef, 'homeRef')"
           class="hover:cursor-pointer hover:text-black transition-colors"
         >
           Home
         </li>
         <li
-          @click="scrollTo(props.aboutUsRef)"
+          @click="scrollTo(props.aboutUsRef, 'aboutUsRef')"
           class="hover:cursor-pointer hover:text-black transition-colors"
         >
           About Us
         </li>
         <li
-          @click="scrollTo(props.whatMakesUsDifferentRef)"
+          @click="scrollTo(props.ourServicesRef, 'ourServicesRef')"
           class="hover:cursor-pointer hover:text-black transition-colors"
         >
           Our Services
         </li>
         <li
-          @click="scrollTo(props.ourProjectsRef)"
+          @click="scrollTo(props.ourProjectsRef, 'ourProjectsRef')"
           class="hover:cursor-pointer hover:text-black transition-colors"
         >
-          Our Works
+          Our Projects
         </li>
       </ul>
 
       <a
         href="#"
-        @click.prevent="scrollTo(props.contactUsRef)"
+        @click.prevent="scrollTo(props.faqRef, 'faqRef')"
         class="hidden lg:block px-6 py-3 rounded-full font-semibold transition-all ease-in-out duration-300 cta-btn hover:shadow-md hover:cursor-pointer"
       >
         Let's Collaborate
@@ -138,7 +168,7 @@ const scrollTo = (targetRef) => {
           <li
             @click="
               closeMobile();
-              scrollTo(props.homeRef);
+              scrollTo(props.homeRef, 'homeRef');
             "
             class="block rounded-xl px-3 py-2 hover:bg-gray-50"
           >
@@ -147,7 +177,7 @@ const scrollTo = (targetRef) => {
           <li
             @click="
               closeMobile();
-              scrollTo(props.aboutUsRef);
+              scrollTo(props.aboutUsRef, 'aboutUsRef');
             "
             class="block rounded-xl px-3 py-2 hover:bg-gray-50"
           >
@@ -156,7 +186,7 @@ const scrollTo = (targetRef) => {
           <li
             @click="
               closeMobile();
-              scrollTo(props.whatMakesUsDifferentRef);
+              scrollTo(props.ourServicesRef, 'ourServicesRef');
             "
             class="block rounded-xl px-3 py-2 hover:bg-gray-50"
           >
@@ -165,16 +195,16 @@ const scrollTo = (targetRef) => {
           <li
             @click="
               closeMobile();
-              scrollTo(props.ourProjectsRef);
+              scrollTo(props.ourProjectsRef, 'ourProjectsRef');
             "
             class="block rounded-xl px-3 py-2 hover:bg-gray-50"
           >
-            Our Works
+            Our Projects
           </li>
           <li
             @click="
               closeMobile();
-              scrollTo(props.contactUsRef);
+              scrollTo(props.faqRef, 'faqRef');
             "
             class="block rounded-xl px-3 py-2 hover:bg-gray-50 text-teal-700 font-medium"
           >
