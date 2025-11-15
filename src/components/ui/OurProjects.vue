@@ -7,8 +7,8 @@ const error = ref(null);
 
 onMounted(async () => {
     try {
-        const res = await fetch("http://103.180.124.212:8080/project"); 
-        const json = await res.json();
+        const res = await fetch("https://api.nirmanakreasiteknologi.com/project"); 
+        const json = await res.json();  
 
         // Jika response berupa { data: [...] }
         if (Array.isArray(json)) {
@@ -47,7 +47,7 @@ onMounted(async () => {
             <div
                 v-for="project in projects"
                 :key="project.id"
-                class="rounded-2xl overflow-hidden shadow-sm border p-6 bg-gray-50"
+                class="rounded-2xl overflow-hidden shadow-sm  p-6 bg-gray-50"
             >
 
                 <!-- Image -->
@@ -70,11 +70,11 @@ onMounted(async () => {
                 <!-- Tags -->
                 <div class="flex flex-wrap gap-3 text-sm text-gray-500">
                 <span
-                    v-for="tag in (project.tags || [])"
+                    v-for="service in (project.services || [])"
                     :key="tag"
                     class="px-3 py-1 bg-white border rounded-full"
                 >
-                    {{ tag }}
+                    {{ service }}
                 </span>
                 </div>
 

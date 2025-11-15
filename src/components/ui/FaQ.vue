@@ -37,7 +37,7 @@ const faqs = ref([
         
         <div class="text-center">
             <span class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-700">
-            <svg class="mr-1.5 h-2 w-2 text-blue-500" fill="currentColor" viewBox="0 0 8 8">
+            <svg class="mr-1.5 h-2 w-2 text-[#7FACB3]" fill="currentColor" viewBox="0 0 8 8">
                 <circle cx="4" cy="4" r="3" />
             </svg>
             FAQ
