@@ -24,8 +24,7 @@ const values = [
             </div>
             <div class="lg:w-1/2 flex flex-col items-start text-left">
               <span class="inline-flex items-center gap-2 rounded-full bg-gray-100 px-4 py-1 mb-4">
-                <span class="w-2 h-2 bg blue-500 rounded-full"></span>
-                <span class="text-sm font-medium text-gray-700">About Us</span>
+                <span class="text-sm text-center font-medium text-gray-700">About Us</span>
               </span>
 
               <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
@@ -36,7 +35,7 @@ const values = [
                 NARATECH is a technology and digital marketing company committed to driving business transformation through innovation and integrity.We provide end-to-end digital solutions, from IT systems and strategy to marketing execution designed to help businesses grow efficiently and sustainably
               </p>
 
-              <button class="bg-slate-500 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-slate-600 transition duration-300 mb-12">
+              <button class="bg-gradient-to-br from-[#4C7980] to-[#7FACB3]/75 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-slate-600 transition duration-300 mb-12">
                 Book a Call
               </button>
 

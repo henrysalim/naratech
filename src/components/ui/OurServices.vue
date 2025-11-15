@@ -27,7 +27,7 @@ const services = [
         <!-- Badge -->
         <div class="flex justify-center mb-8">
             <span class="inline-flex items-center px-4 py-2 bg-white rounded-full shadow-md text-sm font-medium text-gray-700 border border-gray-100">
-            <svg class="mr-2 h-2 w-2 text-blue-500" fill="currentColor" viewBox="0 0 8 8">
+            <svg class="mr-2 h-2 w-2 text-[#7FACB3]" fill="currentColor" viewBox="0 0 8 8">
                 <circle cx="4" cy="4" r="4" />
             </svg>
             Services
@@ -60,8 +60,8 @@ const services = [
                 ></div>
                 
                 <!-- Icon -->
-                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-gray-50 group-hover:bg-blue-50 transition-colors flex-shrink-0 relative z-10">
-                <component :is="service.icon" class="h-6 w-6 text-gray-600 group-hover:text-blue-600 transition-colors" :stroke-width="1.5" />
+                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-gray-50 group-hover:bg-[#7FACB3]/50 transition-colors flex-shrink-0 relative z-10">
+                <component :is="service.icon" class="h-6 w-6 text-gray-600 group-hover:text-[#4C7980]/50 transition-colors" :stroke-width="1.5" />
                 </div>
                 
                 <!-- Text -->
@@ -73,7 +73,7 @@ const services = [
 
             <!-- Right Column - CTA Card -->
             <div class="lg:col-span-1">
-            <div class="relative bg-gradient-to-br from-slate-600 to-slate-700 rounded-2xl p-8 h-full flex flex-col justify-center items-start text-white shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+            <div class="relative bg-gradient-to-br from-[#4C7980] to-[#7FACB3]/50 rounded-2xl p-8 h-full flex flex-col justify-center items-start text-white shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
                 <!-- Background Image -->
                 <div 
                 class="absolute inset-0 opacity-10 pointer-events-none"

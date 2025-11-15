@@ -41,7 +41,7 @@ const visions = [
         <!-- Badge -->
         <div class="flex justify-center mb-8">
             <span class="inline-flex items-center px-4 py-2 bg-white rounded-full shadow-md text-sm font-medium text-gray-700 border border-gray-100">
-            <svg class="mr-2 h-2 w-2 text-blue-500" fill="currentColor" viewBox="0 0 8 8">
+            <svg class="mr-2 h-2 w-2 text-[#7FACB3]" fill="currentColor" viewBox="0 0 8 8">
                 <circle cx="4" cy="4" r="4" />
             </svg>
             Vision
@@ -62,8 +62,8 @@ const visions = [
             >
             <!-- Icon -->
             <div class="flex justify-center mb-6">
-                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-50 group-hover:bg-blue-100 transition-colors">
-                <component :is="vision.icon" class="h-8 w-8 text-blue-600" :stroke-width="1.5" />
+                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-linear-to-b from-[#4C7980]/50 to-[#9FC1C6]/50 transition-colors">
+                <component :is="vision.icon" class="h-8 w-8 text-[#4C7980]" :stroke-width="1.5" />
                 </div>
             </div>
             
