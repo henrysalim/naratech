@@ -11,7 +11,7 @@ const values = [
 </script>
 
 <template>
-    <section class="relative w-full min-h-screen py-16 md:py-24 bg-gradient-to-b from-sky-50 via-blue-50/30 to-white text-center overflow-hidden">
+    <section class="relative w-full min-h-screen py-16 md:py-24 bg-gradient-to-b from-sky-10 via-blue-50/30 to-white text-center overflow-hidden">
         <div class="absolute inset-0 opacity-30 pointer-events-none" 
         style="
         background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
