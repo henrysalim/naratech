@@ -29,7 +29,9 @@ const getElementFromRef = (targetRef) => {
 
   // If caller passed a string selector or id
   if (typeof targetRef === "string") {
-    return document.getElementById(targetRef) || document.querySelector(targetRef);
+    return (
+      document.getElementById(targetRef) || document.querySelector(targetRef)
+    );
   }
 
   // If a ref object was passed (the common case from App.vue)
@@ -70,7 +72,10 @@ const scrollTo = (targetRef, propName = null) => {
   const desktopOffset = 140;
   const mobileOffset = 90;
 
-  const targetY = el.getBoundingClientRect().top + window.scrollY - (window.innerWidth >= 1024 ? desktopOffset : mobileOffset);
+  const targetY =
+    el.getBoundingClientRect().top +
+    window.scrollY -
+    (window.innerWidth >= 1024 ? desktopOffset : mobileOffset);
 
   try {
     gsap.to(window, {
@@ -90,9 +95,11 @@ const scrollTo = (targetRef, propName = null) => {
 
 <template>
   <nav
-    class="fixed z-[99999] top-5 left-4 right-4 rounded-full border border-gray-100 bg-white/80 backdrop-blur-md shadow-lg lg:top-[50px] lg:w-full lg:max-w-6xl lg:left-1/2 lg:-translate-x-1/2"
+    class="fixed z-[99999] top-5 left-4 right-4 lg:top-[50px] lg:w-full lg:max-w-6xl lg:left-1/2 lg:-translate-x-1/2"
   >
-    <div class="flex flex-row justify-between items-center w-full px-8 py-3">
+    <div
+      class="flex flex-row justify-between items-center w-full px-8 py-3 rounded-full border border-gray-100 bg-white/80 backdrop-blur-md shadow-lg"
+    >
       <!-- naratech icon -->
       <a
         href="/"
