@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "vite",
     "name": "naratech",
+    "build": "bunx --bun vite build",
     "version": "0.0.0",
     "private": true,
     "type": "module",
