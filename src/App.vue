@@ -16,6 +16,8 @@ const aboutUsRef = ref(null);
 const ourProjectsRef = ref(null);
 const ourServicesRef = ref(null);
 const faqRef = ref(null);
+const valueRef = ref(null);
+const visionRef = ref(null);
 </script>
 
 <template>
@@ -26,11 +28,15 @@ const faqRef = ref(null);
     :ourServicesRef="ourServicesRef"
     :ourProjectsRef="ourProjectsRef"
     :faqRef="faqRef"
+    :valueRef="valueRef"
+    :visionRef="visionRef"
   />
 
   <main>
     <Jumbotron ref="homeRef" />
     <AboutUs ref="aboutUsRef" />
+    <Value ref="valueRef" />
+    <Vision ref="visionRef" />
     <OurServices ref="ourServicesRef" />
     <OurProjects ref="ourProjectsRef" />
     <FaQ ref="faqRef" />
