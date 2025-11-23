@@ -5,8 +5,8 @@ const values = [
   { id: 1, icon: Award, text: "Excellence", color: "bg-blue-50" },
   { id: 2, icon: Lightbulb, text: "Innovation", color: "bg-teal-50" },
   { id: 3, icon: Users, text: "Collaboration", color: "bg-cyan-50" },
-  { id: 4, icon: Scale, text: "integrity,", color: "bg-emerald-50" },
-  { id: 5, icon: Leaf, text: "sustainability", color: "bg-teal-50" },
+  { id: 4, icon: Scale, text: "Integrity", color: "bg-emerald-50" },
+  { id: 5, icon: Leaf, text: "Sustainability", color: "bg-teal-50" },
 ];
 </script>
 
@@ -53,9 +53,9 @@ const values = [
       <h1
         class="text-3xl md:text-5xl font-bold text-gray-900 max-w-4xl mx-auto leading-tight mb-12 px-4"
       >
-        Crafting exceptional, tech powered strategies that
+        Crafting Exceptional, Tech Powered Strategies That
         <br class="hidden sm:block" />
-        deliver real impact.
+        Deliver Real Impact.
       </h1>
 
       <!-- Values Pills -->

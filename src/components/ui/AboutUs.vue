@@ -41,7 +41,7 @@ const values = [
                 </span>
               </div>
 
-              <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              <h1 class="text-3xl text-justify lg:text-4xl font-bold text-gray-900 mb-6">
                 Building Trust Through Technology and Strategy
               </h1>
 
@@ -50,9 +50,9 @@ const values = [
               >
                 NARATECH is a technology and digital marketing company committed
                 to driving business transformation through innovation and
-                integrity.We provide end-to-end digital solutions, from IT
+                integrity. We provide end-to-end digital solutions, from IT
                 systems and strategy to marketing execution designed to help
-                businesses grow efficiently and sustainably
+                businesses grow efficiently and sustainably.
               </p>
 
               <button
