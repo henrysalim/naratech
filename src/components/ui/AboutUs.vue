@@ -64,7 +64,7 @@ const values = [
               <div class="flex flex-row flex-wrap gap-8 sm:gap-12">
                 <div class="text-left">
                   <span class="block text-4xl font-bold text-gray-900"
-                    >100+</span
+                    >5-10+</span
                   >
                   <span class="block text-sm text-gray-500 mt-1"
                     >Projects Completed</span
@@ -72,7 +72,7 @@ const values = [
                 </div>
 
                 <div class="text-left">
-                  <span class="block text-4xl font-bold text-gray-900">5+</span>
+                  <span class="block text-4xl font-bold text-gray-900">2+</span>
                   <span class="block text-sm text-gray-500 mt-1"
                     >Years Of Experience</span
                   >
@@ -80,10 +80,10 @@ const values = [
 
                 <div class="text-left">
                   <span class="block text-4xl font-bold text-gray-900"
-                    >500+</span
+                    >5-10+</span
                   >
                   <span class="block text-sm text-gray-500 mt-1"
-                    >Happy Costumer</span
+                    >Happy Customers</span
                   >
                 </div>
               </div>

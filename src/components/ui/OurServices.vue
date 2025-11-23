@@ -116,8 +116,8 @@ const lastTwoServices = services.slice(6, 8);
                     Journey with Us!
                     </h3>
                     
-                    <a href="https://wa.me/62859106612098" type="button" class="mt-4 px-6 py-3 bg-white text-slate-700 rounded-lg font-semibold text-sm hover:bg-gray-100 transition-colors shadow-md hover:shadow-lg relative z-10">
-                    Services FAQ
+                    <a href="https://wa.me/628xxxxxxx" type="button" class="mt-4 px-6 py-3 bg-white text-slate-700 rounded-lg font-semibold text-sm hover:bg-gray-100 transition-colors shadow-md hover:shadow-lg relative z-10">
+                        Lets Collaborate
                     </a>
                 </div>
             </div>

@@ -44,7 +44,7 @@
           href="#"
           class="block w-52 rounded-2xl bg-white px-10 py-4 text-center font-semibold text-gray-900 transition-transform duration-300 ease-in-out hover:-translate-y-2"
         >
-          Let's Collaborate
+          Contact Us
         </a>
       </div>
     </div>
@@ -73,14 +73,14 @@
           <a href="#" class="font-semibold transition-colors hover:text-gray-300">Our Services</a>
         </li>
         <li>
-          <a href="#" class="font-semibold transition-colors hover:text-gray-300">Our Works</a>
+          <a href="#" class="font-semibold transition-colors hover:text-gray-300">Our Project</a>
         </li>
       </ul>
 
       <div class="mt-7 h-px w-full bg-white/30"></div>
 
       <div class="mt-7 flex flex-wrap justify-center gap-4 lg:gap-6">
-        <a href="#" class="rounded-full bg-[#7FACB3] p-3 transition-transform hover:-translate-y-1">
+        <a href="https://wa.me/6281234567890" target="_blank" class="rounded-full bg-[#7FACB3] p-3 transition-transform hover:-translate-y-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -91,10 +91,11 @@
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-x"
+            class="lucide lucide-phone"
           >
-            <path d="M18 6 6 18" />
-            <path d="m6 6 12 12" />
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.05 12.05 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.05 12.05 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+            />
           </svg>
         </a>
         
@@ -197,7 +198,7 @@
       </div>
       
       <span class="mt-7 font-semibold text-[#94A3B8]"
-        >&copy; 2025 Nusatech. All Rights Reserved.</span
+        >&copy; 2025 Naratech. All Rights Reserved.</span
       >
     </div>
   </footer>
