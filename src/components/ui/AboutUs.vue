@@ -41,7 +41,7 @@ const values = [
                 </span>
               </div>
 
-              <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              <h1 class="text-3xl text-justify lg:text-4xl font-bold text-gray-900 mb-6">
                 Building Trust Through Technology and Strategy
               </h1>
 
@@ -50,9 +50,9 @@ const values = [
               >
                 NARATECH is a technology and digital marketing company committed
                 to driving business transformation through innovation and
-                integrity.We provide end-to-end digital solutions, from IT
+                integrity. We provide end-to-end digital solutions, from IT
                 systems and strategy to marketing execution designed to help
-                businesses grow efficiently and sustainably
+                businesses grow efficiently and sustainably.
               </p>
 
               <button
@@ -64,7 +64,7 @@ const values = [
               <div class="flex flex-row flex-wrap gap-8 sm:gap-12">
                 <div class="text-left">
                   <span class="block text-4xl font-bold text-gray-900"
-                    >100+</span
+                    >5-10+</span
                   >
                   <span class="block text-sm text-gray-500 mt-1"
                     >Projects Completed</span
@@ -72,7 +72,7 @@ const values = [
                 </div>
 
                 <div class="text-left">
-                  <span class="block text-4xl font-bold text-gray-900">5+</span>
+                  <span class="block text-4xl font-bold text-gray-900">2+</span>
                   <span class="block text-sm text-gray-500 mt-1"
                     >Years Of Experience</span
                   >
@@ -80,10 +80,10 @@ const values = [
 
                 <div class="text-left">
                   <span class="block text-4xl font-bold text-gray-900"
-                    >500+</span
+                    >5-10+</span
                   >
                   <span class="block text-sm text-gray-500 mt-1"
-                    >Happy Costumer</span
+                    >Happy Customers</span
                   >
                 </div>
               </div>

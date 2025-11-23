@@ -5,8 +5,8 @@ const activeIndex = ref(0);
 
 const faqs = ref([
     {
-        question: 'What is NARATECH and what services offer?',
-        answer: 'NARATECH is a technology and digital marketing company dedicated to helping businesses grow through innovation, strategy, and data-driven solutions.',
+        question: 'What is NARATECH and what services we offer?',
+        answer: 'NARATECH is a technology and digital marketing company dedicated to help businesses grow through innovation, strategy, and data-driven solutions.',
     },
     {
         question: 'How long does it take to complete a typical project?',
