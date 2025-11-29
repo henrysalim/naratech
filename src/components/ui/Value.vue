@@ -50,13 +50,13 @@ const values = [
       </div>
 
       <!-- Heading -->
-      <h1
+      <h2
         class="text-3xl md:text-5xl font-bold text-gray-900 max-w-4xl mx-auto leading-tight mb-12 px-4"
       >
         Crafting Exceptional, Tech Powered Strategies That
         <br class="hidden sm:block" />
         Deliver Real Impact.
-      </h1>
+      </h2>
 
       <!-- Values Pills -->
       <div class="flex flex-col items-center gap-4 md:gap-5">
