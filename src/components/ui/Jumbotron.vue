@@ -95,15 +95,13 @@ onUnmounted(() => {
       class="min-h-screen flex flex-col items-center max-w-6xl mx-10 lg:mx-auto pt-64"
     >
       <h1
-        class="pb-2 text-5xl text-center lg:text-6xl xl:text-7xl font-bold tracking-wide bg-clip-text bg-linear-to-r from-[#4C7980] to-[#7FACB3] text-transparent"
+        class="pb-2 text-5xl text-center lg:text-6xl xl:text-5xl font-bold tracking-wide bg-clip-text bg-linear-to-r from-[#4C7980] to-[#7FACB3] text-transparent"
       >
-        Empowering Business
+        NARATECH - Membangun Kepercayaan Melalui Teknologi & Kreativitas
       </h1>
-      <h2
-        class="text-xl lg:text-2xl xl:text-3xl font-semibold mt-4 tracking-wider"
-      >
-        Through Smart Digital Strategy
-      </h2>
+      <p class="text-xl lg:text-xl xl:text-2xl font-semibold mt-4 tracking-wider" style="text-align: center;">
+        NARATECH adalah perusahaan IT & Digital Marketing yang berkomitmen membangun transformasi bisnis memlalui inoavasi dan integritas.
+      </p>
       <header class="my-6">
         <h4 class="text-lg text-center font-light">
           <span ref="textRef"></span>

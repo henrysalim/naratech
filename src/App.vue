@@ -9,6 +9,7 @@ import Value from "./components/ui/Value.vue";
 import Vision from "./components/ui/Vision.vue";
 import OurServices from "./components/ui/OurServices.vue";
 import FaQ from "./components/ui/FaQ.vue";
+import WhatsappFloating from "./components/ui/WhatsappFloating.vue";
 
 // Refs for each section
 const homeRef = ref(null);
@@ -43,4 +44,6 @@ const visionRef = ref(null);
   </main>
 
   <Footer />
+
+  <WhatsappFloating />
 </template>

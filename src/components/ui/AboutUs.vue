@@ -41,9 +41,9 @@ const values = [
                 </span>
               </div>
 
-              <h1 class="text-3xl text-justify lg:text-4xl font-bold text-gray-900 mb-6">
+              <h2 class="text-3xl text-justify lg:text-4xl font-bold text-gray-900 mb-6">
                 Building Trust Through Technology and Strategy
-              </h1>
+              </h2>
 
               <p
                 class="text-gray-600 text-base lg:text-lg leading-relaxed mb-8"
