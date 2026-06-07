@@ -47,31 +47,66 @@ onMounted(async () => {
             <div
                 v-for="project in projects"
                 :key="project.id"
-                class="rounded-2xl overflow-hidden shadow-sm  p-6 bg-gray-50"
+                class="rounded-2xl overflow-hidden shadow-sm p-6 bg-gray-50 flex flex-col justify-between"
             >
+                <div>
+                    <!-- Image -->
+                    <a
+                    v-if="project.project_url"
+                    :href="project.project_url"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="block overflow-hidden rounded-xl mb-6 group cursor-pointer"
+                    >
+                    <img
+                        :src="project.image_url"
+                        alt="project preview"
+                        class="w-full object-cover rounded-xl transition-transform duration-300 hover:scale-105"
+                    />
+                    </a>
+                    <img
+                    v-else
+                    :src="project.image_url"
+                    alt="project preview"
+                    class="w-full rounded-xl mb-6 object-cover"
+                    />
 
-                <!-- Image -->
-                <img
-                :src="project.image_url"
-                alt="project preview"
-                class="w-full rounded-xl mb-6 object-cover"
-                />
+                    <!-- Title -->
+                    <h3 class="text-lg font-semibold mb-2 text-center">
+                    <a
+                        v-if="project.project_url"
+                        :href="project.project_url"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-blue-600 hover:text-blue-800 hover:underline inline-flex items-center gap-1.5 transition-colors cursor-pointer"
+                    >
+                        {{ project.title || project.name }}
+                        <svg
+                        class="w-4 h-4 text-blue-500"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        >
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                        </svg>
+                    </a>
+                    <span v-else>
+                        {{ project.title || project.name }}
+                    </span>
+                    </h3>
 
-                <!-- Title -->
-                <h3 class="text-lg font-semibold mb-2">
-                {{ project.title || project.name }}
-                </h3>
-
-                <!-- Description -->
-                <p class="text-gray-600 text-sm mb-4">
-                {{ project.description || project.desc }}
-                </p>
+                    <!-- Description -->
+                    <p class="text-gray-600 text-sm mb-4 text-center">
+                    {{ project.description || project.desc }}
+                    </p>
+                </div>
 
                 <!-- Tags -->
-                <div class="flex flex-wrap gap-3 text-sm text-gray-500">
+                <div class="flex flex-wrap gap-3 justify-center text-sm text-gray-500 mt-2">
                 <span
                     v-for="service in (project.services || [])"
-                    :key="tag"
+                    :key="service"
                     class="px-3 py-1 bg-white border rounded-full"
                 >
                     {{ service }}
